@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Dark background for the whole app */
+.stApp {
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+/* Streamlit chrome cleanup: remove bright top strip */
+[data-testid="stAppViewContainer"] {
+    background: #0d1117;
+}
+
+[data-testid="stHeader"] {
+    background: #0d1117 !important;
+    border-bottom: 1px solid #21262d;
+}
+
+[data-testid="stToolbar"] {
+    background: transparent !important;
+}
+
+div.block-container {
+    /* Keep content below the fixed Streamlit header */
+    padding-top: 4.25rem !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: #161b22 !important;
+    border-right: 1px solid #30363d;
+}
+
+[data-testid="stSidebar"] * {
+    color: #c9d1d9 !important;
+}
+
+/* Hero title */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f0f6fc;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 0.2rem;
+}
+
+.hero-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    color: #8b949e;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.green-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #238636, #2ea043);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+
+/* Metric cards */
+.metric-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.metric-card:hover {
+    border-color: #238636;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #238636, #56d364);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8b949e;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f0f6fc;
+    line-height: 1;
+}
+
+.metric-delta {
+    font-size: 0.8rem;
+    color: #56d364;
+    margin-top: 0.35rem;
+    font-weight: 600;
+}
+
+.metric-delta.neg {
+    color: #f85149;
+}
+
+/* Section title */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f0f6fc;
+    margin: 2rem 0 1rem;
+    border-left: 4px solid #238636;
+    padding-left: 0.8rem;
+}
+
+/* Report card */
+.report-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin-top: 0.5rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+    font-size: 0.97rem;
+}
+
+.report-card p {
+    margin-bottom: 1rem;
+}
+
+.report-card strong {
+    color: #f0f6fc;
+}
+
+.report-card .highlight {
+    background: rgba(35, 134, 54, 0.15);
+    border-left: 3px solid #238636;
+    padding: 0.6rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+/* Divider */
+hr.styled {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin: 2rem 0;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    background: rgba(35, 134, 54, 0.2);
+    border: 1px solid #238636;
+    color: #56d364;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+/* District rank list */
+.rank-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 0.9rem;
+}
+
+.rank-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #56d364;
+    width: 30px;
+}
+
+.rank-name {
+    color: #c9d1d9;
+    flex: 1;
+    padding-left: 0.5rem;
+}
+
+.rank-val {
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+/* Streamlit element overrides */
+div[data-testid="stSelectbox"] label,
+div[data-testid="stRadio"] label {
+    color: #8b949e !important;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+div[data-testid="stSelectbox"] div[data-baseweb="select"]>div {
+    background: #1a1f29 !important;
+    border: 1px solid #7f1d1d !important;
+    color: #e6edf3 !important;
+}
+
+div[data-testid="stSelectbox"] div[data-baseweb="select"] input {
+    color: #e6edf3 !important;
+}
+
+div[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+    fill: #fca5a5 !important;
+}
+
+div[role="listbox"] {
+    background: #161b22 !important;
+    border: 1px solid #7f1d1d !important;
+}
+
+div[role="option"] {
+    background: #161b22 !important;
+    color: #e6edf3 !important;
+}
+
+div[role="option"][aria-selected="true"] {
+    background: #3f1d1d !important;
+}
+
+div[data-testid="stMetric"] {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 1rem;
+}
